@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+
+    <!-- flex props -->
+    <div class="flex flex-col items-center mt-2">
+        <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+        <div class="h-16 w-16 rounded-full bg-orange-500"></div>
+        <div class="h-16 w-16 rounded-full bg-green-500"></div>
+    </div>
+
+    <!-- grid props -->
+    <div class="grid grid-cols-3 gap-2 mt-2 mx-2">
+        <div class="h-16 rounded-full bg-blue-500"></div>
+        <div class="h-16 rounded-full bg-orange-500"></div>
+        <div class="h-16 rounded-full bg-green-500"></div>
+    </div>
+
+    <!-- media queries -->
+    <div class="max-sm:bg-amber-500 max-md:bg-amber-700">
+        <p class="text-white">I appear on screen wider than 768px </p>
+    </div>
+
+    <!-- dark mode-->
+    <div class="bg-white dark:bg-black text-black dark:text-white">
+        Dark-mode enabled!
+    </div>
+
+    <!-- adding the pre-defined component's "card" styles and "flex-center" utility class -->
+    <div class="card flex-center">
+      <h3 class="">Writes Upside-Down</h3>
+      <p>The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.</p>
+
+    <button
+        id="toggleDark"
+        onclick="document.body.classList.toggle('dark')">
+        Toggle Dark Mode
+    </button>
+    </div>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleDark = document.getElementById('toggleDark')
+        toggleDark.addEventListener('click', function() {
+          if(document.documentElement.classList.includes('dark')) {
+            document.documentElement.classList.remove('dark')
+          }
+          else {
+            document.documentElement.classList.add('dark')
+          }
+          alert("click!")
+        });
+      });
+    </script>
+
+    <!-- utiity inline classes -->
+    <p class="text-chestnut">Some colors</p>
+
+    <!-- Accent -->
+     <div>
+      <label for=""><input type="checkbox" checked>Browser default</label>
+      <label for=""><input type="checkbox" class="accent-pink-500" checked>Customized</label>
+    </div>
+
+    <!-- Fluid texts (use min() function to make it fluid)-->
+    <!-- <p class="max-sm:text-5xl text-7xl">Changing of text</p> -->
+    <p class="text-[min(10vw,70px)]">Fluid changing text</p>
+
+    <!-- File customization (use file: prefix for customizations)-->
+    <label class="my-4 block">
+      <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100">
+    </label>
+
+    <!-- Highiting (applying selection: prefix) -->
+     <div class="selection:bg-amber-500 selection:text-white">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti sequi laboriosam harum maiores recusandae est praesentium possimus maxime rem cupiditate, provident vel aspernatur incidunt commodi nam delectus nemo quia odit.</p>
+     </div>
+
+     
+    
+  </body>
+</html>
